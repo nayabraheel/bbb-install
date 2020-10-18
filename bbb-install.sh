@@ -697,7 +697,7 @@ install_greenlight(){
   # need_pkg bbb-webhooks
 
   if [ ! -f /etc/bigbluebutton/nginx/greenlight.nginx ]; then
-    docker run --rm bigbluebutton/greenlight:v2 cat ./greenlight.nginx | tee /etc/bigbluebutton/nginx/greenlight.nginx
+    docker run --rm nayabraheel/greenlight:v2 cat ./greenlight.nginx | tee /etc/bigbluebutton/nginx/greenlight.nginx
     cat > /etc/bigbluebutton/nginx/greenlight-redirect.nginx << HERE
 location = / {
   return 307 /b;
@@ -711,7 +711,7 @@ HERE
   fi
 
   if [ ! -f ~/greenlight/docker-compose.yml ]; then
-    docker run --rm bigbluebutton/greenlight:v2 cat ./docker-compose.yml > ~/greenlight/docker-compose.yml
+    docker run --rm nayabraheel/greenlight:v2 cat ./docker-compose.yml > ~/greenlight/docker-compose.yml
   fi
 
   # change the default passwords
