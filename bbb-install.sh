@@ -561,7 +561,7 @@ PIDFile=/opt/freeswitch/var/run/freeswitch/freeswitch.pid
 Environment="DAEMON_OPTS=-nonat"
 EnvironmentFile=-/etc/default/freeswitch
 ExecStart=/opt/freeswitch/bin/freeswitch -u freeswitch -g daemon -ncwait \$DAEMON_OPTS
-TimeoutSec=45s
+TimeoutSec=900s
 Restart=always
 WorkingDirectory=/opt/freeswitch
 User=freeswitch
